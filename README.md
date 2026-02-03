@@ -1,5 +1,3 @@
-# FinalML2Project
-
 🕵️‍♂️ Unsupervised Anti-Money Laundering (AML) Detection
 Python PyTorch VS Code Status
 
