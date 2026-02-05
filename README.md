@@ -96,10 +96,6 @@ This project moves beyond standard data science into **Geospatial Analysis**.
 
 To run this analysis on your local machine:
 
-### 1. Clone the Repo
-```bash
-git clone [https://github.com/yourusername/kilimo-space.git](https://github.com/yourusername/kilimo-space.git)
-cd kilimo-space
 # 🌿 Smart-Shamba: AI Plant Disease Detection
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)
@@ -184,21 +180,18 @@ We used the **PlantVillage Dataset**, the gold standard for plant disease classi
 
 Follow these steps to run the project locally.
 
-### 1. Clone the Repo
-```bash
-git clone [https://github.com/yourusername/smart-shamba.git](https://github.com/yourusername/smart-shamba.git)
-cd smart-shamba
 
 
 
-Project: Unsupervised Anomaly Detection in Banking Transaction Networks
+
+# Project: Unsupervised Anomaly Detection in Banking Transaction Networks
 This project implements an advanced Unsupervised Anomaly Detection system designed to identify potential money laundering activities within global banking networks (SWIFT/SEPA).
 
 Unlike traditional supervised models that rely on historical "Suspicious Activity Reports" (which are often delayed or incomplete), this solution utilizes Graph Neural Networks (GNNs) to learn the inherent structure of legitimate legitimate economic activity. By treating the financial system as a graph—where Bank Accounts are nodes and Wire Transfers are edges—the model flags "structural anomalies" that deviate from the norm, effectively catching sophisticated money laundering rings without prior knowledge of their specific identity.
 
-Dataset Source: The model is trained on the IBM Transactions for Anti-Money Laundering (AML) dataset, a massive synthetic dataset designed to replicate real-world banking patterns, including specific laundering topologies. Download Link: Kaggle - IBM AML Transaction Data
+- Dataset Source: The model is trained on the IBM Transactions for Anti-Money Laundering (AML) dataset, a massive synthetic dataset designed to replicate real-world banking patterns, including specific laundering topologies. Download Link: Kaggle - IBM AML Transaction Data
 
-🚩 Problem Statement: What are we solving?
+## 🚩 Problem Statement: What are we solving?
 The Challenge: Financial crime is evolving. Launderers use "Shell Companies" and complex, circular chains of transfers to obscure the origin of dirty money (e.g., drug trafficking or embezzlement proceeds).
 
 Rule-Based Failures: Traditional bank rules (e.g., "flag any transfer over $10,000") are outdated. Criminals bypass them using "Smurfing"—breaking large sums into hundreds of small, innocuous transfers that fly under the radar.
@@ -207,7 +200,7 @@ Lack of Labeled Data: Banks process millions of transactions daily, but confirme
 
 The Goal: To build a system that can answer: "Is this account behaving like a normal business, or is it acting as a mule in a laundering ring?"—purely based on its transaction relationships.
 
-🛠️ Tools Used
+## 🛠️ Tools Used
 This project will be built using a modern Data Science and Machine Learning stack within Visual Studio Code.
 
 Language: Python (Data manipulation and modeling)
@@ -222,7 +215,7 @@ Environment Management: Anaconda / Python venv
 
 IDE: Visual Studio Code (VS Code)
 
-💡 Insights & Solutions
+## 💡 Insights & Solutions
 The "Aha!" Moment During analysis, we utilized graph topology to discover that money laundering rings form "Cycles".
 
 Normal Behavior: Money usually flows linearly (Employer → Employee → Merchant).
@@ -241,7 +234,7 @@ Low Score: Normal Personal/Business use.
 
 High Score: High Probability of Layering/Structuring.
 
-💼 Business Impact
+## 💼 Business Impact
 How does this benefit a Bank or Compliance Team?
 
 Detection of "Unknown" Threats: Traditional systems miss new laundering schemes until a rule is written for them. This AI detects any structural anomaly, catching new schemes on Day 1.
@@ -258,7 +251,7 @@ Documentation & Reporting: The project analysis, interactive notebooks, and fina
 Real-Time API (Future): The core model is wrapped in a FastAPI endpoint. When a new wire transfer occurs, the bank's internal system sends the transaction graph to the API, which returns a risk score in milliseconds, potentially blocking the transfer before it clears.
 
 
-# 🏦 Unsupervised Anomaly Detection in Banking Transaction Networks
+# 🏦 Anomaly Detection in Banking Transaction Networks
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)
 ![PyTorch](https://img.shields.io/badge/PyTorch-Geometric-red?style=for-the-badge&logo=pytorch)
@@ -371,3 +364,91 @@ To make these insights accessible to stakeholders, the project deployment strate
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+# 🧬 Deep-Cure: Graph Neural Networks for Drug Discovery
+
+![PyTorch](https://img.shields.io/badge/PyTorch-Geometric-red?style=for-the-badge&logo=pytorch)
+![RDKit](https://img.shields.io/badge/Bioinformatics-RDKit-blue?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
+![Status](https://img.shields.io/badge/Status-Research_Prototype-success?style=for-the-badge)
+
+> **Accelerating the search for life-saving medications by using Geometric Deep Learning to predict molecular bio-activity.**
+
+---
+
+## 📋 Table of Contents
+- [Overview](#-overview)
+- [The Problem](#-the-problem)
+- [Our Solution](#-our-solution)
+- [Methodology (GNNs)](#-methodology)
+- [Dataset](#-dataset)
+- [Tech Stack](#-tech-stack)
+- [Installation](#-installation)
+- [Results](#-results)
+- [Future Work](#-future-work)
+
+---
+
+## 📖 Overview
+
+**Deep-Cure** is an AI research project that applies **Graph Neural Networks (GNNs)** to the field of computational chemistry. 
+
+By treating chemical compounds as mathematical graphs—where atoms are nodes and bonds are edges—the model predicts whether a specific molecule will effectively inhibit the HIV virus. This approach allows for the "Virtual Screening" of millions of compounds without the need for expensive physical lab tests.
+
+---
+
+## 🚩 The Problem
+
+* **Cost & Time:** Developing a new drug takes over **10 years** and costs **$2.6 billion** on average.
+* **High Failure Rate:** Over **90%** of drug candidates fail in clinical trials because they are toxic or ineffective.
+* **Limitations of Traditional AI:** Standard machine learning models (like Random Forests) require "fingerprinting" molecules into flat lists of numbers, losing vital 3D structural information.
+
+## 💡 Our Solution
+
+We leverage **Geometric Deep Learning** to analyze the raw structure of the molecule.
+Instead of manually engineering features, our Graph Convolutional Network (GCN) automatically learns which atomic patterns (substructures) correlate with fighting the virus.
+
+---
+
+## 🔬 Methodology
+
+The pipeline follows these steps:
+
+1.  **SMILES Ingestion:** We take the text representation of a molecule (e.g., `CC(=O)OC1=CC=CC=C1C(=O)O`).
+2.  **Graph Transformation (RDKit):**
+    * **Nodes (Atoms):** Featurized by Atomic Number, Chirality, Hybridization.
+    * **Edges (Bonds):** Featurized by Bond Type (Single, Double, Aromatic).
+3.  **Message Passing:** The GNN layers allow atoms to "exchange information" with their neighbors to understand their local environment.
+4.  **Global Pooling:** The node states are aggregated to form a single vector representing the whole molecule.
+5.  **Classification:** A final dense layer predicts the probability of the molecule being **Active (1)** or **Inactive (0)** against the target.
+
+---
+
+## 📊 Dataset
+
+We utilize the **HIV Dataset** from the **MoleculeNet** benchmark (maintained by DeepChem).
+
+* **Source:** [MoleculeNet.org](https://moleculenet.org/datasets-1)
+* **Size:** 41,127 compounds.
+* **Target:** Binary Classification (Inhibits HIV replication: Yes/No).
+* **Challenge:** The dataset is highly imbalanced (only ~3.5% of compounds are active), requiring advanced sampling techniques.
+
+---
+
+## 🛠️ Tech Stack
+
+| Domain | Tools |
+| :--- | :--- |
+| **Deep Learning** | PyTorch, PyTorch Geometric (PyG) |
+| **Cheminformatics** | RDKit (Rational Discovery Toolkit) |
+| **Data Handling** | DeepChem, Pandas, NumPy |
+| **Visualization** | Matplotlib, NetworkX (for graph plotting) |
+| **Environment** | Google Colab (GPU accelerated) |
+
+---
+
+## 🚀 Installation
+
+To replicate this project locally:
+
