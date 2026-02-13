@@ -42,7 +42,8 @@ We treat the Earth's surface as a dataset.
 2.  **Processing:** We calculate vegetation indices like **NDVI** (Normalized Difference Vegetation Index) to measure plant health.
 3.  **Classification:** A Machine Learning model (Random Forest / XGBoost) analyzes the light reflection patterns to classify each pixel as a specific crop.
 
----
+## Aha Moment 
+By using both, you aren't just making a map; you're building a Decision Support System. A farmer can take a photo of a sick leaf (Objective: Disease), and your app can tell them how many other farms in their county have the same problem (Objective: Around the Area) and how much of their harvest is at risk (Objective: Yield).
 
 ## 🔬 The Science: How It Works
 
